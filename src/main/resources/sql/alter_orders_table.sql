@@ -1,0 +1,1 @@
+ALTER TABLE orders CHANGE COLUMN Status status VARCHAR(20) DEFAULT 'Active'; 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.paint.Color?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.subscriptionbox.ui.controllers.DashboardController"
+      spacing="20"
+      style="-fx-background-color: #f4f4f4;">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <!-- Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Text text="Dashboard" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+        <Label text="Welcome to the Subscription Box Management System" style="-fx-text-fill: #666;"/>
+    </HBox>
+    
+    <!-- Summary Cards -->
+    <GridPane hgap="20" vgap="20">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+        </columnConstraints>
+        
+        <!-- Total Users Card -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              GridPane.columnIndex="0">
+            <Label text="Total Users" style="-fx-text-fill: #666;"/>
+            <Text fx:id="totalUsersText" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+        
+        <!-- Total Products Card -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              GridPane.columnIndex="1">
+            <Label text="Total Products" style="-fx-text-fill: #666;"/>
+            <Text fx:id="totalProductsText" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+        
+        <!-- Active Subscriptions Card -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              GridPane.columnIndex="2">
+            <Label text="Active Subscriptions" style="-fx-text-fill: #666;"/>
+            <Text fx:id="activeSubscriptionsText" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+        
+        <!-- Total Orders Card -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              GridPane.columnIndex="3">
+            <Label text="Total Orders" style="-fx-text-fill: #666;"/>
+            <Text fx:id="totalOrdersText" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+    </GridPane>
+    
+    <!-- Quick Actions and Recent Activity -->
+    <HBox spacing="20">
+        <!-- Quick Actions -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              HBox.hgrow="ALWAYS">
+            <Label text="Quick Actions" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Button text="Add New User" onAction="#handleAddUser" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button text="Add New Product" onAction="#handleAddProduct" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            <Button text="Create Subscription" onAction="#handleCreateSubscription" style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+        </VBox>
+        
+        <!-- Recent Activity -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;"
+              HBox.hgrow="ALWAYS">
+            <Label text="Recent Activity" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <ListView fx:id="recentActivityList" style="-fx-background-color: transparent;"/>
+        </VBox>
+    </HBox>
+</VBox> 

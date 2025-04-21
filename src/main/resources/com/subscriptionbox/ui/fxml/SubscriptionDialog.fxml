@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.subscriptionbox.ui.controllers.SubscriptionDialogController"
+      spacing="10" prefWidth="400" prefHeight="500">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="User ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="userIdField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Product ID:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="productIdField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Subscription Type ID:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="subscriptionTypeIdField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Expiration Date:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <DatePicker fx:id="expirationDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+        <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <ComboBox fx:id="statusComboBox" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+        <Label text="Subscription Status:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+        <ComboBox fx:id="subscriptionStatusComboBox" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+        <Label text="Frequency:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+        <ComboBox fx:id="frequencyComboBox" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+        <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+        <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save" onAction="#handleSave"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+</VBox> 

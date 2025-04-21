@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.subscriptionbox.ui.controllers.MainController"
+      spacing="10">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Exit" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About"/>
+        </Menu>
+    </MenuBar>
+
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <!-- Navigation Sidebar -->
+        <VBox spacing="10" style="-fx-background-color: #f0f0f0;" minWidth="200">
+            <Label text="Navigation" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity"/>
+            <Button text="Users" onAction="#showUsers" maxWidth="Infinity"/>
+            <Button text="Subscriptions" onAction="#showSubscriptions" maxWidth="Infinity"/>
+            <Button text="Products" onAction="#showProducts" maxWidth="Infinity"/>
+            <Button text="Orders" onAction="#showOrders" maxWidth="Infinity"/>
+        </VBox>
+
+        <!-- Content Area -->
+        <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS">
+            <!-- Content will be loaded here -->
+        </StackPane>
+    </HBox>
+</VBox> 
